@@ -1,17 +1,19 @@
 import React, { useRef } from 'react'
 import './Testimonials.css'
-import next_icon from '../../assets/next-icon.png'
+import CommentCards from '../CommentCards/CommentCards'
+{/*import next_icon from '../../assets/next-icon.png'
 import back_icon from '../../assets/back-icon.png'
 import user_1 from '../../assets/images_savos.png'
 import user_2 from '../../assets/images_savos.png'
 import user_3 from '../../assets/images_savos.png'
-import user_4 from '../../assets/images_savos.png'
+import user_4 from '../../assets/images_savos.png' */}
+
 
 
 
 const Testimonials = () => {
 
-    const slider = useRef();
+    /*const slider = useRef();
     let tx = 0;
 
     const slideForward = ()=>{
@@ -26,7 +28,7 @@ const Testimonials = () => {
             tx +=25;
         }
         slider.current.style.transform = `translateX(${tx}%)`
-    }
+    }*/
 
 
 
@@ -34,7 +36,9 @@ const Testimonials = () => {
 
   return (
     <div className='testimonials'>
-        <img src={next_icon} alt="" className="next-btn" onClick={slideForward}/>
+        <CommentCards/>
+        
+       {/* <img src={next_icon} alt="" className="next-btn" onClick={slideForward}/>
         <img src={back_icon} alt="" className="back-btn" onClick={slideBackward} />
         <div className="slider">
             <ul ref={slider} >
@@ -105,7 +109,7 @@ const Testimonials = () => {
                     </div>
                 </li>
             </ul>
-        </div>
+        </div> */}
     </div>
   )
 }

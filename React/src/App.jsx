@@ -1,36 +1,22 @@
-import React from 'react'
-import Navbar from './Components/Navbar/Navbar'
-import Hero from './Components/Hero/Hero'
-import Programs from './Components/Programs/Programs'
-import Title from './Components/Title/Title'
-import About from './Components/About/About'
-import Campus from './Components/Campus/Campus'
-import Testimonials from './Components/Testimonials/Testimonials'
-import Contact from './Components/Contact/Contact'
-import Footer from './Components/Footer/footer'
+import { Routes, Route } from 'react-router-dom'
 
+import Index from './Index'
+import Programs from './pages/Programs/Programs'
+import Campus from './pages/Campus/Campus'
+import About from './pages/About/About'
+import CommentsPage from './Components/Comments/CommentsPage'
+import AdminPage from './Components/Comments/AdminPage'
 
 const App = () => {
-  
   return (
-    <div>
-      <Navbar/>
-      <Hero/>
-      <div className="container">
-        <Title subTitle='Our SERVICES' title='What We Offer'/>
-        <Programs/>
-        <Title subTitle='Gallery' title='Product Photos'/>
-        <Campus/>
-        <About/>
-        <Title subTitle='Testimonials' title='What Students Say'/>  
-        <Testimonials/> 
-        <Title subTitle='Contact Us' title='Get In Touch'/>
-        <Contact/>
-        <Footer/>
-      </div>
-      
-      
-    </div>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/services" element={<Programs />} />
+      <Route path="/product" element={<Campus />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/testimonials" element={<CommentsPage />} />
+      <Route path="/admin" element={<AdminPage />} />
+    </Routes>
   )
 }
 

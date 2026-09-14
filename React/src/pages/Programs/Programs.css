@@ -1,0 +1,48 @@
+.services{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+} 
+
+.services h1{
+    color: #db0000;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+h3{
+    color: #a02121;
+    font-size: 20px;
+}
+
+.coating,
+.ketchup,
+.shito{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.coating-left,
+.shito-left{
+    margin-left: 10px;
+}
+
+.coating-right,
+.shito-right{
+    flex-basis: 50%;
+    margin-left: 60px;
+}
+
+.ketchup-right{
+    margin-left: 10px;
+}
+
+.ketchup-left{
+    flex-basis: 50%;
+    margin-left: 40px;
+}

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import logo from '../../assets/savos.png'
 import menu_icon from '../../assets/menu-icons.png'
-import { Link } from 'react-scroll';
+{/*import { Link } from 'react-scroll';*/}
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -46,14 +47,22 @@ const Navbar = () => {
 
   return (
     <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
+      <Link to='/' className='home-link'>
         <img src={logo} alt="" className='logo' />
+      </Link>
         <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
-            <li><Link to='hero' smooth={true} offset={0} onClick={closeMenu}>Home</Link></li>
+            {/*<li><Link to='hero' smooth={true} offset={0} onClick={closeMenu}>Home</Link></li>
             <li><Link to='programs' smooth={true} offset={-295} onClick={closeMenu}>Services</Link></li>
             <li><Link to='campus' smooth={true} offset={-260} onClick={closeMenu}>Products</Link></li>
             <li><Link to='about' smooth={true} offset={-165} onClick={closeMenu}>About Us</Link></li>
             <li><Link to='testimonials' smooth={true} offset={-285} onClick={closeMenu}>Testimonials</Link></li>
-            <li><button className='btn'><Link to='contact' smooth={true} offset={-260} onClick={closeMenu}>Contact Us</Link></button></li>
+            <li><button className='btn'><Link to='contact' smooth={true} offset={-260} onClick={closeMenu}>Contact Us</Link></button></li>*/}
+            <li><Link to='/' className='home-link' onClick={closeMenu}>Home</Link></li>
+            <li><Link to='/services' className='services-link' onClick={closeMenu}>Services</Link></li>
+            <li><Link to='/product' className='program-link' onClick={closeMenu}>Products</Link></li>
+            <li><Link to='/about' className='about-link' onClick={closeMenu}>About Us</Link></li>
+            <li><Link to='/testimonials' className='testimonial-link' onClick={closeMenu}>Testimonials</Link></li>
+            <li><button className='btn'><Link to='/' className='contact-link' onClick={closeMenu}>Contact Us</Link></button></li>
         </ul>
         <img
           src={menu_icon}
