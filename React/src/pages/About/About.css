@@ -9,6 +9,14 @@
     font-size: 36px;
 }
 
+h5{
+    font-size: 17px;
+}
+
+h3{
+    font-size: 23px;
+}
+
 .project-lead{
    margin: 30px auto;
     display: flex;
@@ -28,3 +36,62 @@
 .profile{
     flex-basis: 60%;
 }
+
+
+@media (max-width: 800px){
+    
+
+    .project-lead{
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .profile{
+        flex-basis: 55%;
+       /* margin-right: 55px;*/
+    }
+
+    .profile-picture{
+        flex-basis: 55%;
+        margin-bottom: 20px;
+       /* margin-left: 55px;*/
+    }
+
+    p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px){
+     
+
+    .project-lead{
+        flex-direction: column;
+        width: 85%;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .profile{
+        flex-basis: 50%;
+       /* margin-right: 55px;*/
+    }
+
+    .profile-picture{
+        flex-basis: 50%;
+        width: 100%;
+       /* margin-left: 55px;*/
+    }
+
+    p{
+        font-size: 13px;
+    }
+
+    .propic{
+        width: 100%;
+    }
+
+
+    }

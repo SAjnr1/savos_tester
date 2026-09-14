@@ -35,7 +35,7 @@ const About = () => {
           <img src={about_img} className='propic'/>
         </div>
         <div className="profile">
-          <h3>PERSON1</h3>
+          <h3>PERSON2</h3>
           <h5>Person's Position</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, 
           asperiores! Officiis nostrum hic quia placeat 
@@ -49,7 +49,7 @@ const About = () => {
        </div>
        <div className="project-lead">
         <div className="profile">
-          <h3>PERSON1</h3>
+          <h3>PERSON3</h3>
           <h5>Person's Position</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, 
           asperiores! Officiis nostrum hic quia placeat 
@@ -69,7 +69,7 @@ const About = () => {
           <img src={about_img} className='propic'/>
         </div>
         <div className="profile">
-          <h3>PERSON1</h3>
+          <h3>PERSON4</h3>
           <h5>Person's Position</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, 
           asperiores! Officiis nostrum hic quia placeat 
