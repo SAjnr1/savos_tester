@@ -62,7 +62,7 @@ const Navbar = () => {
             <li><Link to='/product' className='program-link' onClick={closeMenu}>Products</Link></li>
             <li><Link to='/about' className='about-link' onClick={closeMenu}>About Us</Link></li>
             <li><Link to='/testimonials' className='testimonial-link' onClick={closeMenu}>Testimonials</Link></li>
-            <li><button className='btn'><Link to='/' className='contact-link' onClick={closeMenu}>Contact Us</Link></button></li>
+            <li><button className='btn'><Link to='/admin' className='contact-link' onClick={closeMenu}>Admin</Link></button></li>
         </ul>
         <img
           src={menu_icon}
