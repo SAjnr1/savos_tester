@@ -10,7 +10,7 @@ const Hero = () => {
     <div className='hero container' >
         <div className="hero-text">
             <h1>S A V O S</h1>
-            <ThreeScene/>
+            {/*<ThreeScene/>*/}
             <h2>We Produce And Provide Quality Food Goods</h2>
             <p>We transform fresh, locally grown tomatoes into delicious, high-quality food products that bring convenience, great taste, and healthy nutrition to every home.
             </p>

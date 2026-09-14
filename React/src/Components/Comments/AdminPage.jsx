@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../../supabaseClient'
-import './App.css'
+import './App1.css'
+import Title from '../Title/Title'
 
 
 export default function AdminPage() {
@@ -178,7 +179,8 @@ export default function AdminPage() {
 
   if (!session) {
     return (
-      <main>
+      <main >
+        <div className="login">
         <h1>Admin</h1>
         <p className="sub">Sign in to manage comments and products.</p>
         <form onSubmit={handleLogin}>
@@ -188,6 +190,7 @@ export default function AdminPage() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder='example@gmail.com'
             required
           />
           <label htmlFor="login-password">Password</label>
@@ -196,13 +199,16 @@ export default function AdminPage() {
             type="password"
             value={loginPassword}
             onChange={(e) => setLoginPassword(e.target.value)}
+            placeholder='*********'
             required
           />
           <button type="submit" disabled={loggingIn}>
             {loggingIn ? 'Signing in…' : 'Sign in'}
           </button>
-          <div className="status">{error}</div>
+          
         </form>
+        </div>
+        <div className="status">{error}</div>
         <Link to="/" className="admin-link">Back to home</Link>
       </main>
     )
@@ -211,13 +217,14 @@ export default function AdminPage() {
   return (
     <main>
       <div className="admin-header-row">
-        <h1>Admin</h1>
+        <h1>Admin Page</h1>
         <button type="button" className="logout-btn" onClick={handleLogout}>
           Log out
-        </button>
+      </button>
       </div>
-      {error && <div className="status">{error}</div>}
+      
 
+      <div className="post-product">
       <h2 className="admin-section-title">Post a product</h2>
       <form onSubmit={handlePostProduct}>
         <label htmlFor="image">Product photo</label>
@@ -231,6 +238,7 @@ export default function AdminPage() {
         <label htmlFor="product-name">Product name</label>
         <input
           id="product-name"
+          placeholder='Name of product'
           value={productName}
           onChange={(e) => setProductName(e.target.value)}
           maxLength={100}
@@ -244,6 +252,7 @@ export default function AdminPage() {
             type="number"
             step="0.01"
             min="0"
+            placeholder='0.00'
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             required
@@ -269,6 +278,9 @@ export default function AdminPage() {
           {posting ? 'Posting…' : 'Post product'}
         </button>
       </form>
+      </div>
+
+      {error && <div className="status">{error}</div>}
 
       <h2 className="admin-section-title">Manage products</h2>
       <ul className="admin-list">

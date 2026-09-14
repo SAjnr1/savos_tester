@@ -25,7 +25,7 @@ const Programs = () => {
     <div className="coating">
       <div className="coating-left">
       <ThreeScene/>
-    </div>
+      </div>
     <div className="coating-right">
       <h3>TOMATO COATING</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 

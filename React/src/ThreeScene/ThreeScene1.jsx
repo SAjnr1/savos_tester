@@ -102,6 +102,12 @@ const ThreeScene = ({
     // ==========================================
 
     let model = null
+    let baseScale = 1
+
+    // The container width (in px) at which the model renders at
+    // baseScale. As the container shrinks/grows below/above this,
+    // the model's actual scale is adjusted proportionally in resize().
+    const REFERENCE_SIZE = 300
 
     const loader = new GLTFLoader()
 
@@ -155,10 +161,13 @@ const ThreeScene = ({
         )
 
         if (maxDimension > 0) {
-          const scale =
+          baseScale =
             modelSize / maxDimension
 
-          model.scale.setScalar(scale)
+          const responsiveFactor =
+            container.clientWidth / REFERENCE_SIZE
+
+          model.scale.setScalar(baseScale * responsiveFactor)
         }
 
         // ======================================
@@ -241,6 +250,12 @@ const ThreeScene = ({
         height,
         false
       )
+
+      if (model) {
+        const responsiveFactor = width / REFERENCE_SIZE
+
+        model.scale.setScalar(baseScale * responsiveFactor)
+      }
     }
 
     resize()
@@ -377,8 +392,8 @@ const ThreeScene = ({
     <div
       ref={mountRef}
       style={{
-        width: '300px',
-        height: '300px',
+        width: 'clamp(150px, 40vw, 300px)',
+        height: 'clamp(150px, 40vw, 300px)',
         overflow: 'hidden',
         position: 'relative',
         margin: '50px',
@@ -386,7 +401,7 @@ const ThreeScene = ({
         touchAction: 'none',
         borderRadius: '15px',
         boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.1)',
-        transform: 'translate(20px, -50px)',
+        transform: 'translate(clamp(10px, 2.67vw, 20px), clamp(-50px, -6.67vw, -25px))',
       }}
     />
   )

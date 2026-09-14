@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../../supabaseClient'
+import Title from '../Title/Title'
 
 
 function waLink(number) {
@@ -28,7 +29,8 @@ export default function ProductsPage() {
 
   return (
     <main>
-      <h1>Products</h1>
+      <Title subTitle='Our PRODUCTS' title='Shop For Our Product'/>
+      
       {!loadingProducts && products.length > 0 && (
         <div className="products-grid">
           {products.map((p) => (

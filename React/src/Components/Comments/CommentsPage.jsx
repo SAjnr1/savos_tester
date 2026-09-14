@@ -4,6 +4,7 @@ import { supabase } from '../../supabaseClient'
 import CommentCards from '../CommentCards/CommentCards'
 import './App.css'
 import Navbar from '../Navbar/Navbar'
+import Title from '../Title/Title'
 
 
 export default function CommentsPage() {
@@ -43,7 +44,7 @@ export default function CommentsPage() {
   return (
     <main>
       <Navbar/>
-      <h1>Comments</h1>
+      <Title title='TESTIMONIAL' subTitle='Write  down a COMMENT'/>
       <p className="sub">Leave a comment. Type your experiences with our products here. 
         We would love you here your thoughts of our products and make changes to make your experience a better one.
          Anyone can read or comment here.</p>
@@ -58,13 +59,13 @@ export default function CommentsPage() {
           placeholder="Enter your name here"
           required
         />
-        <label htmlFor="location">Location (optional)</label>
+        <label htmlFor="location">Location </label>
         <input
           id="location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           maxLength={80}
-          placeholder="City, country"
+          placeholder="City, country (optional)"
         />
         <label htmlFor="body">Comment</label>
         <textarea

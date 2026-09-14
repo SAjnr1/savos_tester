@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../../supabaseClient'
 import './App.css'
+import { Link } from 'react-router-dom'
 
 function timeAgo(iso) {
   const diff = (Date.now() - new Date(iso).getTime()) / 1000
@@ -42,7 +43,7 @@ export default function CommentCards() {
     <ul className="thread">
       {loading && <li className="empty">Loading comments…</li>}
       {!loading && comments.length === 0 && (
-        <li className="empty">No comments yet — be the first.</li>
+        <li className="empty"><Link to='/testimonials'>No comments yet — be the first.</Link></li>
       )}
       {!loading &&
         comments.map((c) => (

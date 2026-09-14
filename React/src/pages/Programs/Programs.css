@@ -46,3 +46,70 @@ h3{
     flex-basis: 50%;
     margin-left: 40px;
 }
+
+@media (max-width: 800px){
+    .services{
+        flex-direction: column;
+        /*margin: 60px auto;*/
+        width: 100%;
+    }
+
+    .coating,
+    .ketchup,
+    .shito{
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .coating-right,
+    .shito-right{
+        flex-basis: 55%;
+       /* margin-right: 55px;*/
+    }
+
+    .ketchup-left{
+        flex-basis: 55%;
+        margin-bottom: 20px;
+       /* margin-left: 55px;*/
+    }
+
+    p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px){
+     .services{
+        flex-direction: column;
+        /*margin: 60px auto;*/
+        width: 100%;
+    }
+
+    .coating,
+    .ketchup,
+    .shito{
+        flex-direction: column;
+        width: 85%;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .coating-right,
+    .shito-right{
+        flex-basis: 50%;
+       /* margin-right: 55px;*/
+    }
+
+    .ketchup-left{
+        flex-basis: 50%;
+       /* margin-left: 55px;*/
+    }
+
+    p{
+        font-size: 13px;
+    }
+
+
+    }

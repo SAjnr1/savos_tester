@@ -37,7 +37,6 @@ const Testimonials = () => {
   return (
     <div className='testimonials'>
         <CommentCards/>
-        
        {/* <img src={next_icon} alt="" className="next-btn" onClick={slideForward}/>
         <img src={back_icon} alt="" className="back-btn" onClick={slideBackward} />
         <div className="slider">
