@@ -107,8 +107,7 @@ h3{
 
     .coating-right,
     .shito-right{
-        flex-basis: 60%;
-        text-align: justify;
+        flex-basis: 50%;
        /* margin-right: 55px;*/
     }
 
