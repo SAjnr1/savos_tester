@@ -7,6 +7,8 @@ import gallery_4 from '../../assets/savos-body-cream.png'
 import { Link } from 'react-router-dom'
 // The image dimensions are 467 × 588 pixels.
  import white_arrow from '../../assets/white-arrow.png'
+ import  { ArrowRight } from 'lucide-react'
+
 
 
 const Campus = () => {
