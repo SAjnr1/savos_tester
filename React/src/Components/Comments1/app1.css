@@ -6,7 +6,6 @@
   --hairline: #D7DBE0;
   --title: #000000;
   --sub-title: #202020;
-  --accent-title: #991515;
 }
 
 * {
@@ -24,45 +23,19 @@ body {
 main {
   max-width: 640px;
   margin: 0 auto;
-  margin-top: 40px;
   padding: 64px 24px 96px;
 }
 
-.login,
-.post-product{
-  min-width: 300px;
-  min-height: 300px;
-  padding: 35px 35px 35px 35px;
-  box-shadow: 0 0 40px  rgba(0, 0, 0, 0.05);
-  border-radius: 15px;
-}
-
 h1 {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 30px;
-  color: var(--accent-title);
-  text-align: center;
-}
-
-
-.post-product h2{
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 25px;
-    color: var(--accent);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-}
-
-h2{
-    text-align: center;
-    font-size: 19px;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
 }
 
 p.sub {
   color: var(--sub-title);
-  margin: 0 0 20px;
+  margin: 0 0 40px;
   font-size: 15px;
 }
 
@@ -73,7 +46,7 @@ form {
 
 label {
   display: block;
-  font-size: 19px;
+  font-size: 20px;
   color: var(--title);
   margin-bottom: 6px;
 }
@@ -200,7 +173,7 @@ button:disabled {
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  font-family:monospace;
+  font-family: monospace;
 }
 
 .comment-body {
@@ -317,7 +290,7 @@ button:disabled {
 }
 
 .logout-btn:hover {
-  color: var(--accent);
+  color: var(--ink);
   border-color: var(--ink-soft);
 }
 
@@ -352,8 +325,8 @@ button:disabled {
 .admin-link {
   display: inline-block;
   margin-top: 32px;
-  font-size: 15px;
-  color: var(--title);
+  font-size: 13px;
+  color: var(--ink-soft);
   text-decoration: none;
   border-bottom: 1px solid var(--hairline);
 }

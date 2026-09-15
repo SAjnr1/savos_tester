@@ -24,22 +24,30 @@ h3{
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-bottom: 55px;
     
 }
 
 .coating-left,
 .shito-left{
     margin-left: 10px;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
 }
 
 .coating-right,
 .shito-right{
     flex-basis: 50%;
     margin-left: 60px;
+    margin-right: 50px;
 }
 
 .ketchup-right{
     margin-left: 10px;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
 }
 
 .ketchup-left{
@@ -110,6 +118,18 @@ h3{
     p{
         font-size: 13px;
     }
+
+    .ketchup-left,
+    .coating-right,
+    .shito-right{
+    order: 1;
+}
+
+.ketchup-right,
+.coating-left,
+.shito-left{
+    order: 2;
+}
 
 
     }

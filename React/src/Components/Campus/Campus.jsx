@@ -4,8 +4,9 @@ import gallery_1 from '../../assets/savos-shito.png'
 import gallery_2 from '../../assets/savos-soothing-gel.png'
 import gallery_3 from '../../assets/savos_ketchup.png'
 import gallery_4 from '../../assets/savos-body-cream.png'
+import { Link } from 'react-router-dom'
 // The image dimensions are 467 × 588 pixels.
-// import white_arrow from '../../assets/white-arrow.png'
+ import white_arrow from '../../assets/white-arrow.png'
 
 
 const Campus = () => {
@@ -17,7 +18,7 @@ const Campus = () => {
             <img src={gallery_3} alt="" />
             <img src={gallery_4} alt="" />
         </div>
-       {/*} <button className='btn dark-btn'>See more here <img src={white_arrow} alt="" /></button> */}
+        <button className='btn dark-btn'><Link to='/product'>See more here <img src={white_arrow} alt="" /></Link></button> 
         
     </div>
   )

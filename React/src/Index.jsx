@@ -26,11 +26,11 @@ const Index = () => {
         <About/>
         <Title subTitle='Testimonials' title='What Students Say'/>  
         <Testimonials/> 
-        <Title subTitle='Contact Us' title='Get In Touch'/>
+        <Title subTitle='Customer Care' title="We're Here To Help"/>
         <Contact/>
-        <Footer/>
+        
       </div>
-      
+      <Footer/>
       
     </div>
   )

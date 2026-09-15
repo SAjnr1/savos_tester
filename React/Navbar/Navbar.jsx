@@ -3,7 +3,7 @@ import './Navbar.css'
 import logo from '../../assets/savos.png'
 import menu_icon from '../../assets/menu-icons.png'
 {/*import { Link } from 'react-scroll';*/}
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -57,11 +57,11 @@ const Navbar = () => {
             <li><Link to='about' smooth={true} offset={-165} onClick={closeMenu}>About Us</Link></li>
             <li><Link to='testimonials' smooth={true} offset={-285} onClick={closeMenu}>Testimonials</Link></li>
             <li><button className='btn'><Link to='contact' smooth={true} offset={-260} onClick={closeMenu}>Contact Us</Link></button></li>*/}
-            <li><NavLink to='/' end className='home-link' onClick={closeMenu}>Home</NavLink></li>
-            <li><NavLink to='/services' className='services-link' onClick={closeMenu}>Services</NavLink></li>
-            <li><NavLink to='/product' className='program-link' onClick={closeMenu}>Products</NavLink></li>
-            <li><NavLink to='/about' className='about-link' onClick={closeMenu}>About Us</NavLink></li>
-            <li><NavLink to='/testimonials' className='testimonial-link' onClick={closeMenu}>Testimonials</NavLink></li>
+            <li><Link to='/' className='home-link' onClick={closeMenu}>Home</Link></li>
+            <li><Link to='/services' className='services-link' onClick={closeMenu}>Services</Link></li>
+            <li><Link to='/product' className='program-link' onClick={closeMenu}>Products</Link></li>
+            <li><Link to='/about' className='about-link' onClick={closeMenu}>About Us</Link></li>
+            <li><Link to='/testimonials' className='testimonial-link' onClick={closeMenu}>Testimonials</Link></li>
             {/*<li><button className='btn'><Link to='/admin' className='contact-link' onClick={closeMenu}>Admin</Link></button></li>*/}
         </ul>
         <img

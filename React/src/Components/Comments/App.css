@@ -8,9 +8,10 @@
   --sub-title: #202020;
 }
 
-* {
+*{
   box-sizing: border-box;
 }
+
 
 body {
   margin: 0;
@@ -173,7 +174,7 @@ button:disabled {
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  font-family: sans-serif;
+  font-family: monospace;
 }
 
 .comment-body {
@@ -204,7 +205,7 @@ button:disabled {
 
 .product-image {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 160px;
   object-fit: cover;
   display: block;
 }
@@ -247,7 +248,7 @@ button:disabled {
 }
 
 .btn-whatsapp {
-  background: #d32525;
+  background: #25d366;
   color: #fff;
 }
 

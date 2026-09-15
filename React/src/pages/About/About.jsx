@@ -1,8 +1,9 @@
 import React from 'react'
 import './About.css'
+import Title from '../../Components/Title/Title'
 import Navbar from '../../Components/Navbar/Navbar'
 import about_img from '../../assets/about.png'
-import Title from '../../Components/Title/Title'
+import Footer from '../../Components/Footer/footer'
 import play_icon from '../../assets/red-arrow.png'
 // The image dimensions are 1194 × 1144 pixels.
 
@@ -10,9 +11,9 @@ const About = () => {
   return (
     <>
     <Navbar/>
-       <div className="about">
-        <Title subTitle='' title='ABOUT COMPANY'/> 
-       </div>
+    <div className="info">
+      <Title subTitle='OUR COMPANY' title='ABOUT US'/>
+    </div>
        <div className="project-lead">
         <div className="profile">
           <h3>PERSON1</h3>
@@ -81,6 +82,8 @@ const About = () => {
           non quasi excepturi placeat exercitationem, temporibus odit a. Facere.</p>
         </div>
        </div>
+
+       <Footer/>
     </>
   )
 }

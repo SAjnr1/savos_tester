@@ -30,6 +30,7 @@ export default function ProductsPage() {
   return (
     <main>
       <Title subTitle='Our PRODUCTS' title='Shop For Our Product'/>
+      {loadingProducts && <p className="empty">Loading products…</p>}
       
       {!loadingProducts && products.length > 0 && (
         <div className="products-grid">
@@ -60,6 +61,8 @@ export default function ProductsPage() {
       )}
 
       <Link to="/" className="admin-link">Back to home</Link>
+
+
     </main>
   )
 }

@@ -5,6 +5,7 @@ import CommentCards from '../CommentCards/CommentCards'
 import './App.css'
 import Navbar from '../Navbar/Navbar'
 import Title from '../Title/Title'
+import Footer from '../Footer/footer'
 
 
 export default function CommentsPage() {
@@ -42,6 +43,7 @@ export default function CommentsPage() {
   }
 
   return (
+    <>
     <main>
       <Navbar/>
       <Title title='TESTIMONIAL' subTitle='Write  down a COMMENT'/>
@@ -84,5 +86,7 @@ export default function CommentsPage() {
 
       <Link to="/" className="admin-link">Back to home</Link>
     </main>
+    <Footer/>
+    </>
   )
 }

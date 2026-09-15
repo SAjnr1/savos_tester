@@ -23,19 +23,6 @@ nav ul li{
     font-size: 16px;
 }
 
-nav ul li a{
-    color: inherit;
-    text-decoration: none;
-    padding: 6px 14px;
-    border-radius: 20px;
-    transition: background 0.25s ease, color 0.25s ease;
-}
-
-nav ul li a.active{
-    background: #faf6f6;
-    color: #a02121;
-}
-
 .dark-nav{
     background: #a02121;
     transition: 0.5s;
@@ -128,10 +115,6 @@ nav ul li a.active{
         display: block;
         margin: 10px 0;
         font-size: 16px;
-    }
-
-    nav ul li a{
-        display: inline-block;
     }
 
     .hide-mobile-menu{

@@ -6,6 +6,7 @@ import gallery_3 from '../../assets/savos_ketchup.png'
 import gallery_4 from '../../assets/savos-body-cream.png' */}
 import Navbar from '../../Components/Navbar/Navbar'
 import ProductsPage from '../../Components/Comments/ProductsPage'
+import Footer from '../../Components/Footer/footer'
 // The image dimensions are 467 × 588 pixels.
 // import white_arrow from '../../assets/white-arrow.png'
 
@@ -15,6 +16,7 @@ const Campus = () => {
     <>
     <Navbar/>
     <ProductsPage/>
+    <Footer/>
     
 
     </>

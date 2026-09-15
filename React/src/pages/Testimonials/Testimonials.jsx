@@ -38,6 +38,7 @@ const Testimonials = () => {
 
   return (
     <>
+    <CommentsPage/>
   { /* <div className='testimonials'>
         
         <img src={next_icon} alt="" className="next-btn" onClick={slideForward}/>
@@ -115,7 +116,7 @@ const Testimonials = () => {
     </div> */} 
 
     
-    <CommentsPage/>
+   
      </>
   )
 }
