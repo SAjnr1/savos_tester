@@ -34,12 +34,7 @@ const Programs = () => {
         After drying, the tomatoes are treated with a thin, food-safe edible coating, such as a chitosan-based solution. 
         This protective layer helps reduce moisture loss, slow ripening, and provide protection against microorganisms. 
         The process is important because tomatoes can spoil quickly during storage and transportation, causing financial losses and food waste. 
-<<<<<<< HEAD
-        SAVOS combines food science and agricultural innovation to preserve tomato quality, helping farmers, retailers, 
-        and consumers keep tomatoes fresh, and marketable for longer.
-=======
-        SAVOS combines food science and agricultural innovation to preserve tomato quality, helping farmers, retailers, and consumers keep tomatoes fresh, and marketable for longer.
->>>>>>> b44d48701c733409250a3beedad9e12ce694f58f
+        SAVOS combines food science and agricultural innovation to preserve tomato quality, helping farmers, retailers, and consumers keep tomatoes fresh, and marketable for longer. 
 </p>
     </div>
     </div>
@@ -50,13 +45,8 @@ const Programs = () => {
         The tomatoes are washed, sorted, and processed before being crushed and cooked to release their natural colour and flavour. 
         The tomato pulp is strained for a smooth consistency and combined with carefully measured vinegar, sugar, salt, and selected spices. 
         The mixture is then cooked until it reaches the desired thickness, flavour, and texture before being hygienically packaged and sealed. 
-<<<<<<< HEAD
-        This process transforms fresh tomatoes into a convenient, longer-lasting product while creating value for farmers and helping reduce post-harvest losses. 
-        SAVOS focuses on hygiene, consistency, quality, and responsible food production at every stage</p>
-=======
         This process transforms fresh tomatoes into a convenient, longer-lasting product while creating value for farmers and helping reduce post-harvest losses.
         SAVOS focuses on hygiene, consistency, quality, and responsible food production at every stage.</p>
->>>>>>> b44d48701c733409250a3beedad9e12ce694f58f
       </div>
        <div className="ketchup-right">
         <ThreeScene1/>
@@ -68,15 +58,6 @@ const Programs = () => {
       </div>
       <div className="shito-right">
       <h3>SHITO PRODUCTION</h3>
-<<<<<<< HEAD
-      <p>Our shito production combines locally sourced ingredients with food-processing methods to create a flavourful Ghanaian condiment. 
-        We begin by selecting peppers, onions, garlic, ginger, tomatoes, spices, and cooking oil. 
-        The ingredients are cleaned and prepared before being blended or processed to the desired consistency. 
-        The mixture is then slowly cooked with oil and seasonings, allowing the ingredients to develop their colour, aroma, and flavour. 
-        Control of cooking time, temperature, and moisture helps produce a consistent product. Once ready, the shito is cooled and packaged in clean containers. 
-        SAVOS Shito provides a convenient way to enjoy a favourite while creating value from locally sourced ingredients
-</p>
-=======
       <p>Our shito production combines locally sourced ingredients with food-processing methods to create a flavourful Ghanaian condiment.
         We begin by selecting peppers, onions, garlic, ginger, tomatoes, spices, and cooking oil. 
         The ingredients are cleaned and prepared before being blended or processed to the desired consistency. 
@@ -85,7 +66,6 @@ const Programs = () => {
         Once ready, the shito is cooled and packaged in clean containers. 
         SAVOS Shito provides a convenient way to enjoy a favourite while creating value from locally sourced ingredients.</p>
 
->>>>>>> b44d48701c733409250a3beedad9e12ce694f58f
       </div>
     </div>
 
