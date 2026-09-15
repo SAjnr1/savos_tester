@@ -29,16 +29,7 @@ const Programs = () => {
       </div>
     <div className="coating-right">
       <h3>TOMATO COATING</h3>
-      <p>Our tomato coating process is designed to extend the freshness and shelf life of tomatoes after harvest. 
-        We begin by selecting healthy, ripe tomatoes and carefully washing them to remove dirt and surface contaminants. 
-        After drying, the tomatoes are treated with a thin, food-safe edible coating, such as a chitosan-based solution. 
-        Chitosan is a biodegradable material that can form a protective layer around the tomato, helping reduce moisture loss, 
-        slow down ripening, and provide protection against some microorganisms.
-        This process is important because tomatoes can spoil quickly during storage and transportation, 
-        leading to significant post-harvest losses for farmers and sellers. 
-        By slowing deterioration, our coating can help tomatoes remain marketable for longer and reduce unnecessary food waste.
-        SAVOS aims to combine simple food-processing techniques with scientific innovation to address challenges in agriculture. 
-        The result is a practical approach to preserving tomatoes while maintaining their natural quality, appearance, and usefulness for consumers.
+      <p>Our tomato coating process is designed to extend the freshness and shelf life of tomatoes after harvest. We begin by selecting ripe tomatoes and carefully washing them to remove dirt and contaminants. After drying, the tomatoes are treated with a thin, food-safe edible coating, such as a chitosan-based solution. This protective layer helps reduce moisture loss, slow ripening, and provide protection against microorganisms. The process is important because tomatoes can spoil quickly during storage and transportation, causing financial losses and food waste. SAVOS combines food science and agricultural innovation to preserve tomato quality, helping farmers, retailers, and consumers keep tomatoes fresh, and marketable for longer.
 </p>
     </div>
     </div>
