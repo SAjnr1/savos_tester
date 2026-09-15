@@ -48,10 +48,12 @@ export default function CommentCards() {
       {!loading &&
         comments.map((c) => (
           <li key={c.id} className="comment-card">
-            <div className="comment-header">
+            <div className="user-info">
               <div className="avatar">{initials(c.author)}</div>
-              <h3 className="comment-name">{c.author}</h3>
-              <span className="comment-time">{c.location ? `${c.location} · ` : ''}{timeAgo(c.created_at)}</span>
+              <div>
+                <h3>{c.author}</h3>
+                <span>{c.location ? `${c.location} · ` : ''}{timeAgo(c.created_at)}</span>
+              </div>
             </div>
             <p className="comment-body">{c.body}</p>
           </li>

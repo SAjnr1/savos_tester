@@ -2,16 +2,13 @@
   --paper: #EDEFF2;
   --ink: #1B1F24;
   --ink-soft: #565E68;
-  --accent: #c90202;
+  --accent: #1F6F63;
   --hairline: #D7DBE0;
-  --title: #000000;
-  --sub-title: #202020;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
-
 
 body {
   margin: 0;
@@ -35,20 +32,22 @@ h1 {
 }
 
 p.sub {
-  color: var(--sub-title);
+  color: var(--ink-soft);
   margin: 0 0 40px;
   font-size: 15px;
 }
 
 form {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
   padding: 28px 0;
   margin-bottom: 48px;
 }
 
 label {
   display: block;
-  font-size: 20px;
-  color: var(--title);
+  font-size: 13px;
+  color: var(--ink-soft);
   margin-bottom: 6px;
 }
 
@@ -60,7 +59,7 @@ textarea {
   color: var(--ink);
   background: transparent;
   border: none;
-  border-bottom: 3px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
   padding: 6px 2px;
   margin-bottom: 22px;
   resize: vertical;
@@ -105,21 +104,19 @@ button:disabled {
 .thread {
   list-style: none;
   margin: 0;
-  /* break out of the 640px column so there's room to scroll */
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding: 4px calc(50vw - 50% + 24px) 16px;
+  padding: 4px 0 16px;
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 480px;
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
   scrollbar-width: thin;
   scrollbar-color: var(--accent) transparent;
 }
 
 .thread::-webkit-scrollbar {
-  height: 8px;
+  width: 8px;
 }
 
 .thread::-webkit-scrollbar-thumb {
@@ -136,7 +133,10 @@ button:disabled {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   padding: 18px;
-  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
   scroll-snap-align: start;
 }
 
@@ -144,43 +144,44 @@ button:disabled {
   flex: 0 0 auto;
 }
 
-.user-info {
+.comment-header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 12px;
   font-size: 13px;
 }
 
-.user-info h3 {
+.comment-name {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
   color: var(--accent);
 }
 
-.user-info span {
+.comment-time {
   color: var(--ink-soft);
 }
 
 .avatar {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--accent);
   color: var(--paper);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  font-family: monospace;
+  font-size: 13px;
+  font-family: Georgia, serif;
 }
 
 .comment-body {
   font-size: 16px;
   white-space: pre-wrap;
   margin: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .empty {

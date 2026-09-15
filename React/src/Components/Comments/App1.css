@@ -110,6 +110,7 @@ button {
   border: none;
   padding: 10px 22px;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 button:hover {
@@ -131,21 +132,20 @@ button:disabled {
 .thread {
   list-style: none;
   margin: 0;
-  /* break out of the 640px column so there's room to scroll */
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding: 4px calc(50vw - 50% + 24px) 16px;
+  padding: 4px 0 16px;
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 480px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y proximity;
   scrollbar-width: thin;
   scrollbar-color: var(--accent) transparent;
 }
 
 .thread::-webkit-scrollbar {
-  height: 8px;
+  width: 8px;
 }
 
 .thread::-webkit-scrollbar-thumb {
@@ -162,7 +162,10 @@ button:disabled {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   padding: 18px;
-  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
   scroll-snap-align: start;
 }
 
@@ -170,37 +173,36 @@ button:disabled {
   flex: 0 0 auto;
 }
 
-.user-info {
+.comment-header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 12px;
   font-size: 13px;
 }
 
-.user-info h3 {
+.comment-name {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
   color: var(--accent);
 }
 
-.user-info span {
+.comment-time {
   color: var(--ink-soft);
 }
 
 .avatar {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--accent);
   color: var(--paper);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  font-family:monospace;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .comment-body {
@@ -314,6 +316,7 @@ button:disabled {
   border: 1px solid var(--hairline);
   padding: 6px 14px;
   font-size: 13px;
+  border-radius: 30px;
 }
 
 .logout-btn:hover {
@@ -322,11 +325,13 @@ button:disabled {
 }
 
 .admin-section-title {
-  font-size: 16px;
+  font-size: 21px;
   font-weight: 400;
   margin: 40px 0 12px;
   padding-top: 24px;
   border-top: 1px solid var(--hairline);
+  text-transform: uppercase;
+  font-weight: 550;
 }
 
 .admin-section-title:first-of-type {
@@ -367,6 +372,25 @@ button:disabled {
   list-style: none;
   margin: 0;
   padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y proximity;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+.admin-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-list::-webkit-scrollbar-thumb {
+  background: var(--hairline);
+  border-radius: 4px;
+}
+
+.admin-list::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }
 
 .admin-row {
@@ -376,6 +400,7 @@ button:disabled {
   gap: 16px;
   padding: 18px 0;
   border-bottom: 1px solid var(--hairline);
+  scroll-snap-align: start;
 }
 
 .delete-btn {
@@ -385,6 +410,7 @@ button:disabled {
   border: 1px solid #A32D2D;
   padding: 6px 14px;
   font-size: 13px;
+  border-radius: 30px;
 }
 
 .delete-btn:hover {
