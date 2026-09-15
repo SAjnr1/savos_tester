@@ -271,13 +271,31 @@ button:disabled {
 }
 
 .btn-call {
-  background: var(--accent);
+  background: #ce0505;
   color: var(--paper);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.phone-call{
+  width: 18px;
+  align-self: center;
+}
+
+.whatsapp-icon{
+  width: 25px;
+  align-self: center;
 }
 
 .btn-whatsapp {
-  background: #d32525;
+  background: #05ad05;
   color: #fff;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 .price-input {

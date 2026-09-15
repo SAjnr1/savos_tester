@@ -45,4 +45,6 @@ a{
 .btn.dark-btn{
   background: #a02121;
   color: #fff;
+  align-content: center;
+  justify-content: center;
 }

@@ -84,7 +84,7 @@ export default function CommentsPage() {
 
       <CommentCards key={refreshKey} />
 
-      <Link to="/" className="admin-link">Back to home</Link>
+      {/*<Link to="/" className="admin-link">Back to home</Link>*/}
     </main>
     <Footer/>
     </>

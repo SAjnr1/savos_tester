@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../../supabaseClient'
 import Title from '../Title/Title'
-
+import whatsapp_icon from '../../assets/whatsapp-icon1.png' 
+import { PhoneCall } from 'lucide-react'
 
 function waLink(number) {
   return `https://wa.me/${number.replace(/\D/g, '')}`
@@ -41,13 +42,14 @@ export default function ProductsPage() {
                 <div className="product-name">{p.name}</div>
                 <div className="product-price">GH¢ {Number(p.price).toFixed(2)}</div>
                 <div className="product-actions">
-                  <a href={`tel:${p.phone}`} className="btn-call">Call Seller</a>
+                  <a href={`tel:${p.phone}`} className="btn-call"><PhoneCall className='phone-call'/>Call Seller</a>
                   <a
                     href={waLink(p.whatsapp)}
                     target="_blank"
                     rel="noreferrer"
                     className="btn-whatsapp"
                   >
+                    <img src={whatsapp_icon} alt='' className='whatsapp-icon' />
                     WhatsApp Seller
                   </a>
                 </div>
@@ -60,7 +62,7 @@ export default function ProductsPage() {
         <p className="empty">No products posted yet.</p>
       )}
 
-      <Link to="/" className="admin-link">Back to home</Link>
+     {/* <Link to="/" className="admin-link">Back to home</Link>*/}
 
 
     </main>
