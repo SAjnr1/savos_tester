@@ -81,7 +81,7 @@
 
     .program{
         flex-basis: 100%;
-        width: 60%;
+        width: 80%;
     }
 
    .program:hover .caption{
