@@ -29,6 +29,7 @@ h3{
 }
 
 .coating-left,
+. ketchup-right,
 .shito-left{
     margin-left: 10px;
     align-self: center;
@@ -37,24 +38,16 @@ h3{
 }
 
 .coating-right,
+. ketchup-left,
 .shito-right{
-    flex-basis: 50%;
+    flex-basis: 60%;
     margin-left:  40px;
     /*margin-left: 60px;
     margin-right: 50px;*/
 }
 
-.ketchup-right{
-    margin-left: 10px;
-    align-self: center;
-    justify-content: center;
-    justify-self: center;
-}
 
-.ketchup-left{
-    flex-basis: 50%;
-    margin-left: 40px;
-}
+
 
 @media (max-width: 800px){
     .services{
