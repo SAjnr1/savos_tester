@@ -72,10 +72,16 @@
 @media (max-width: 500px){
     .programs{
         flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        align-items: center;
+        align-content: center;
     }
 
     .program{
         flex-basis: 100%;
+        width: 60%;
     }
 
    .program:hover .caption{
