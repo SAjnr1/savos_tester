@@ -39,8 +39,9 @@ h3{
 .coating-right,
 .shito-right{
     flex-basis: 50%;
-    margin-left: 60px;
-    margin-right: 50px;
+    margin-left:  40px;
+    /*margin-left: 60px;
+    margin-right: 50px;*/
 }
 
 .ketchup-right{
