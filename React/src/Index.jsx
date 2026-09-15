@@ -24,7 +24,7 @@ const Index = () => {
         <Title subTitle='Gallery' title='Product Photos'/>
         <Campus/>
         <About/>
-        <Title subTitle='Testimonials' title='What Students Say'/>  
+        <Title subTitle='Reviews' title='What People Say'/>  
         <Testimonials/> 
         <Title subTitle='Customer Care' title="We're Here To Help"/>
         <Contact/>

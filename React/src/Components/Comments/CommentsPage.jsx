@@ -46,7 +46,7 @@ export default function CommentsPage() {
     <>
     <main>
       <Navbar/>
-      <Title title='TESTIMONIAL' subTitle='Write  down a COMMENT'/>
+      <Title title='REVIEWS' subTitle='Write down a COMMENT'/>
       <p className="sub">Leave a comment. Type your experiences with our products here. 
         We would love you here your thoughts of our products and make changes to make your experience a better one.
          Anyone can read or comment here.</p>
