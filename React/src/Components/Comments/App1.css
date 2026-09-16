@@ -421,6 +421,64 @@ button:disabled {
   scroll-snap-align: start;
 }
 
+.admin-row-actions {
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn {
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 30px;
+}
+
+.edit-btn:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.admin-row-editing {
+  display: block;
+}
+
+.edit-product-form label {
+  font-size: 13px;
+}
+
+.edit-current-photo {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.edit-product-form input {
+  margin-bottom: 14px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-actions button {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--hairline);
+}
+
 .delete-btn {
   flex-shrink: 0;
   background: transparent;

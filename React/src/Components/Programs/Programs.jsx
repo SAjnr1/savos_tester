@@ -1,7 +1,7 @@
 import React from 'react'
 import './Programs.css'
 import program_1 from '../../assets/tomato-coating.png'
-import program_2 from '../../assets/savos-ketchup.jpg'
+import program_2 from '../../assets/savos-ketchup.png'
 import product_3 from '../../assets/savos_shito.png'
 import program_icon_1 from '../../assets/tomato_coating.png'
 import program_icon_2 from '../../assets/ketchup-bottle.png'

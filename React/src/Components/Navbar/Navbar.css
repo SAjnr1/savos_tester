@@ -95,6 +95,10 @@ nav ul li a.active{
         padding-bottom: 64px;
     }
 
+    html,body{
+        min-height: 100dvh;
+    }
+
     .bottom-nav{
         display: flex;
         position: fixed;

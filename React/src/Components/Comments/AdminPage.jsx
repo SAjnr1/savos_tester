@@ -29,6 +29,15 @@ export default function AdminPage() {
   const [whatsapp, setWhatsapp] = useState('')
   const [posting, setPosting] = useState(false)
 
+  // Editing a product
+  const [editingProductId, setEditingProductId] = useState(null)
+  const [editName, setEditName] = useState('')
+  const [editPrice, setEditPrice] = useState('')
+  const [editPhone, setEditPhone] = useState('')
+  const [editWhatsapp, setEditWhatsapp] = useState('')
+  const [editFile, setEditFile] = useState(null)
+  const [savingEdit, setSavingEdit] = useState(false)
+
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session)
@@ -156,15 +165,120 @@ export default function AdminPage() {
     setPosting(false)
   }
 
-  async function handleDeleteProduct(id) {
+  function extractStoragePath(imageUrl) {
+    // Public Storage URLs look like:
+    // https://YOUR-PROJECT.supabase.co/storage/v1/object/public/product-images/<path>
+    const marker = '/product-images/'
+    const index = imageUrl.indexOf(marker)
+    return index === -1 ? null : imageUrl.slice(index + marker.length)
+  }
+
+  async function handleDeleteProduct(product) {
+    const { id, image_url } = product
     setDeletingProductId(id)
     setError('')
+
+    // Best-effort: remove the photo from Storage too, so deleted
+    // products don't leave orphaned files eating into the free
+    // storage quota. If this fails, still proceed to delete the
+    // row — a leftover file is a much smaller problem than a
+    // product that won't delete at all.
+    const storagePath = extractStoragePath(image_url)
+    if (storagePath) {
+      const { error: storageError } = await supabase.storage
+        .from('product-images')
+        .remove([storagePath])
+      if (storageError) console.error('Could not remove image from storage:', storageError)
+    }
 
     const { error } = await supabase.from('products').delete().eq('id', id)
 
     if (error) setError('Could not delete that product.')
     else setProducts((prev) => prev.filter((p) => p.id !== id))
     setDeletingProductId(null)
+  }
+
+  function handleStartEdit(p) {
+    setEditingProductId(p.id)
+    setEditName(p.name)
+    setEditPrice(String(p.price))
+    setEditPhone(p.phone)
+    setEditWhatsapp(p.whatsapp)
+    setEditFile(null)
+    setError('')
+  }
+
+  function handleCancelEdit() {
+    setEditingProductId(null)
+    setEditFile(null)
+  }
+
+  async function handleSaveEdit(id) {
+    if (!editName.trim() || !editPrice || !editPhone.trim() || !editWhatsapp.trim()) return
+
+    setSavingEdit(true)
+    setError('')
+
+    const oldImageUrl = products.find((p) => p.id === id)?.image_url
+
+    const updates = {
+      name: editName.trim(),
+      price: parseFloat(editPrice),
+      phone: editPhone.trim(),
+      whatsapp: editWhatsapp.trim(),
+    }
+
+    // Only touch the photo if the admin picked a new one
+    if (editFile) {
+      const fileExt = editFile.name.split('.').pop()
+      const filePath = `${Date.now()}-${Math.random().toString(36).slice(2)}.${fileExt}`
+
+      const { error: uploadError } = await supabase.storage
+        .from('product-images')
+        .upload(filePath, editFile)
+
+      if (uploadError) {
+        setError('Could not upload the new photo.')
+        setSavingEdit(false)
+        return
+      }
+
+      const { data: urlData } = supabase.storage
+        .from('product-images')
+        .getPublicUrl(filePath)
+
+      updates.image_url = urlData.publicUrl
+    }
+
+    const { error } = await supabase
+      .from('products')
+      .update(updates)
+      .eq('id', id)
+
+    if (error) {
+      setError('Could not save changes.')
+    } else {
+      // The row now points at the new photo, so the old file in
+      // Storage is safely orphaned — remove it. Best-effort: if
+      // this fails, the edit itself has already succeeded, so we
+      // just log it rather than surface an error to the admin.
+      if (editFile && oldImageUrl) {
+        const oldPath = extractStoragePath(oldImageUrl)
+        if (oldPath) {
+          const { error: removeError } = await supabase.storage
+            .from('product-images')
+            .remove([oldPath])
+          if (removeError) console.error('Could not remove old image from storage:', removeError)
+        }
+      }
+
+      setProducts((prev) =>
+        prev.map((p) => (p.id === id ? { ...p, ...updates } : p))
+      )
+      setEditingProductId(null)
+      setEditFile(null)
+    }
+    setSavingEdit(false)
   }
 
   // ---- Render ----
@@ -289,25 +403,98 @@ export default function AdminPage() {
           <li className="empty">No products posted yet.</li>
         )}
         {!loadingProducts &&
-          products.map((p) => (
-            <li key={p.id} className="admin-row">
-              <div className="admin-product-preview">
-                <img src={p.image_url} alt={p.name} />
-                <div>
-                  <div className="comment-meta"><strong>{p.name}</strong></div>
-                  <div className="comment-meta">GH¢ {Number(p.price).toFixed(2)}</div>
+          products.map((p) =>
+            editingProductId === p.id ? (
+              <li key={p.id} className="admin-row admin-row-editing">
+                <div className="edit-product-form">
+                  <label>Current photo</label>
+                  <img src={p.image_url} alt={p.name} className="edit-current-photo" />
+                  <label htmlFor={`edit-photo-${p.id}`}>Replace photo (optional)</label>
+                  <input
+                    id={`edit-photo-${p.id}`}
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => setEditFile(e.target.files[0])}
+                  />
+                  <label htmlFor={`edit-name-${p.id}`}>Product name</label>
+                  <input
+                    id={`edit-name-${p.id}`}
+                    value={editName}
+                    onChange={(e) => setEditName(e.target.value)}
+                    maxLength={100}
+                  />
+                  <label htmlFor={`edit-price-${p.id}`}>Price</label>
+                  <div className="price-input">
+                    <span className="currency-prefix">GH¢</span>
+                    <input
+                      id={`edit-price-${p.id}`}
+                      type="number"
+                      step="0.01"
+                      min="0"
+                      value={editPrice}
+                      onChange={(e) => setEditPrice(e.target.value)}
+                    />
+                  </div>
+                  <label htmlFor={`edit-phone-${p.id}`}>Seller phone number</label>
+                  <input
+                    id={`edit-phone-${p.id}`}
+                    value={editPhone}
+                    onChange={(e) => setEditPhone(e.target.value)}
+                  />
+                  <label htmlFor={`edit-whatsapp-${p.id}`}>Seller WhatsApp number</label>
+                  <input
+                    id={`edit-whatsapp-${p.id}`}
+                    value={editWhatsapp}
+                    onChange={(e) => setEditWhatsapp(e.target.value)}
+                  />
+                  <div className="edit-actions">
+                    <button
+                      type="button"
+                      onClick={() => handleSaveEdit(p.id)}
+                      disabled={savingEdit}
+                    >
+                      {savingEdit ? 'Saving…' : 'Save'}
+                    </button>
+                    <button
+                      type="button"
+                      className="cancel-btn"
+                      onClick={handleCancelEdit}
+                      disabled={savingEdit}
+                    >
+                      Cancel
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <button
-                type="button"
-                className="delete-btn"
-                onClick={() => handleDeleteProduct(p.id)}
-                disabled={deletingProductId === p.id}
-              >
-                {deletingProductId === p.id ? 'Deleting…' : 'Delete'}
-              </button>
-            </li>
-          ))}
+              </li>
+            ) : (
+              <li key={p.id} className="admin-row">
+                <div className="admin-product-preview">
+                  <img src={p.image_url} alt={p.name} />
+                  <div>
+                    <div className="comment-meta"><strong>{p.name}</strong></div>
+                    <div className="comment-meta">GH¢ {Number(p.price).toFixed(2)}</div>
+                  </div>
+                </div>
+                <div className="admin-row-actions">
+                  <button
+                    type="button"
+                    className="edit-btn"
+                    onClick={() => handleStartEdit(p)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    className="delete-btn"
+                    onClick={() => handleDeleteProduct(p)}
+                    disabled={deletingProductId === p.id}
+                  >
+                    {deletingProductId === p.id ? 'Deleting…' : 'Delete'}
+                  </button>
+                </div>
+              </li>
+            )
+          )}
       </ul>
 
       <h2 className="admin-section-title">Manage comments</h2>
