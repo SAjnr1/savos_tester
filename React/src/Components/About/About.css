@@ -47,34 +47,49 @@
     color: #353535;
 }
 
-@media (max-width: 800px){
+@media (max-width: 900px){
     .about{
         flex-direction: column;
         margin: 60px auto;
     }
 
     .about-left{
-        flex-basis: auto;
+        flex-basis: 50%;
         width: 100%;
         margin-bottom: 30px;
     }
 
     .about-right{
-        flex-basis: auto;
-        width: 100%;
+        flex-basis: 30%;
+        width: 90%;
     }
 
     .about h2{
         max-width: 100%;
+        font-size: 30px;
+    }
+
+    .about h3{
+        text-align: center;
+    }
+
+    .about p h3{
+        text-align: left;
     }
 }
 
+
+
 @media (max-width: 500px){
     .about h2{
-        font-size: 26px;
+        font-size: 23px;
     }
 
     .play-icon{
         width: 45px;
+    }
+
+    .about p h3{
+        font-size: 20px;
     }
 }
