@@ -7,10 +7,10 @@ import ThreeScene2 from '../../ThreeScene/ThreeScene2'
 import Title from '../../Components/Title/Title'
 import Footer from '../../Components/Footer/footer'
 
-{/*import program_1 from '../../assets/tomato-coating.png'
-import program_2 from '../../assets/savos-ketchup.jpg'
-import product_3 from '../../assets/savos_shito.png'
-import program_icon_1 from '../../assets/tomato_coating.png'
+import tomato from '../../assets/tomato-coating.png'
+import ketchup from '../../assets/savos-ketchup.png'
+import shito from '../../assets/savos_shito.png'
+{/*import program_icon_1 from '../../assets/tomato_coating.png'
 import program_icon_2 from '../../assets/ketchup-bottle.png'
 import program_icon_3 from '../../assets/shito-container.png'*/}
 
@@ -27,6 +27,9 @@ const Programs = () => {
       <div className="coating-left">
       <ThreeScene/>
       </div>
+      <div className="about-pic">
+          <img src={tomato} alt='' className='pic'/>
+        </div>
     <div className="coating-right">
       <h3>TOMATO COATING</h3>
       <p>Our tomato coating process is designed to extend the freshness and shelf life of tomatoes after harvest. 
@@ -51,11 +54,17 @@ const Programs = () => {
        <div className="ketchup-right">
         <ThreeScene1/>
       </div>
+      <div className="about-pic">
+          <img src={ketchup} alt='' className='pic'/>
+        </div>
     </div>
     <div className="shito">
       <div className="shito-left">
         <ThreeScene2/>
       </div>
+      <div className="about-pic">
+          <img src={shito} alt='' className='pic'/>
+        </div>
       <div className="shito-right">
       <h3>SHITO PRODUCTION</h3>
       <p>Our shito production combines locally sourced ingredients with food-processing methods to create a flavourful Ghanaian condiment.

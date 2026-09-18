@@ -5,7 +5,11 @@
     justify-content: center;
     margin-top: 70px;
     margin-bottom: 30px;
-} 
+}
+
+.about-pic{
+    display: none;
+}
 
 .services h1{
     color: #db0000;
@@ -133,7 +137,7 @@ h3{
         font-size: 15px;
     }
 
-        .ketchup-left,
+    .ketchup-left,
     .coating-right,
     .shito-right{
     order: 1;
@@ -142,8 +146,30 @@ h3{
 .ketchup-right,
 .coating-left,
 .shito-left{
-    order: 2;
+    display: none;
 }
+
+.about-pic {
+    width: 50%;
+    flex-basis: 60%;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    order: 2;
+    align-items: center;
+    margin-left: 180px ;
+    margin-bottom: 20px;
+    
+}
+
+.pic{
+    width: 90%;
+    border-radius: 35px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
 }
 
 
@@ -160,7 +186,7 @@ h3{
         flex-direction: column;
         width: 85%;
         justify-content: center;
-        margin-bottom: 30px;
+        gap: 10px;
     }
 
     .coating-right,
@@ -189,8 +215,28 @@ h3{
 .ketchup-right,
 .coating-left,
 .shito-left{
-    order: 2;
+    display: none;
 }
 
+.about-pic {
+    width: 80%;
+    flex-basis: 80%;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    order: 2;
+    align-items: center;
+    margin-left: 60px ;
+    margin-bottom: 20px;
+    
+}
+
+.pic{
+    width: 100%;
+    border-radius: 35px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
 
     }
